@@ -98,6 +98,7 @@ install_packages() {
     esac
 }
 
+add_profile
 detect_os_type
 detect_arch_type
 
