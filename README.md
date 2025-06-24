@@ -1,6 +1,6 @@
 Init
 
 ```bash
-bash <(curl -fsSL "https://raw.githubusercontent.com/W-Mai/init/main/init??$(date +%s)")
+bash <(curl -fsSL "https://raw.githubusercontent.com/W-Mai/init/main/init?$(date +%s)")
 ```
 

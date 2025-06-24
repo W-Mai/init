@@ -10,6 +10,7 @@ TEMP_DIR="$(mktemp -d)"
 CLEANED=false
 
 cleanup() {
+    popd
     if [ "$CLEANED" = false ]; then
         echo "[INFO] Cleaning up $TEMP_DIR"
         rm -rf "$TEMP_DIR"
@@ -23,6 +24,7 @@ trap 'echo "[WARN] Interrupted by user (Ctrl+C)"; exit 130' INT
 echo "[INFO] Cloning repo to $TEMP_DIR"
 git clone --depth=1 "$REPO_URL" "$TEMP_DIR"
 
+pushd $TEMP_DIR
 echo "[INFO] Running init.sh"
 bash "$TEMP_DIR/init.sh"
 
