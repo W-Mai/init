@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+add_profile() {
+   if ! grep -q -- 'source ~/.zprofile' ~/.config/fish/config.fish; then
+        ed -s ~/.config/fish/config.fish <<< $'0a\nsource ~/.zprofile\n.\nw\nq'
+   fi
+}
+
 detect_os_type() {
     local unameOut
     unameOut="$(uname -s)"
