@@ -41,6 +41,7 @@ install_package_manager() {
             echo "[INFO] Installing Homebrew (via Gitee mirror)..."
             if ! command -v brew >/dev/null 2>&1; then
                 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+                source ~/.zprofile
             else
                 echo "[INFO] brew already installed"
             fi
