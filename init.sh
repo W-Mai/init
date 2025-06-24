@@ -65,6 +65,32 @@ install_package_manager() {
     esac
 }
 
+install_packages() {
+    if [ $# -eq 0 ]; then
+        echo "[ERROR] No package names provided."
+        return 1
+    fi
+
+    echo "[INFO] Installing packages: $*"
+
+    case "${OS_TYPE}" in
+        macos)
+            brew install "$@"
+            ;;
+        arch)
+            sudo pacman -S --noconfirm "$@"
+            ;;
+        ubuntu|debian)
+            sudo apt update
+            sudo apt install -y "$@"
+            ;;
+        *)
+            echo "[WARN] Package install not supported on OS_TYPE=${OS_TYPE}"
+            return 1
+            ;;
+    esac
+}
+
 detect_os_type
 detect_arch_type
 
@@ -72,4 +98,5 @@ echo "OS_TYPE=${OS_TYPE}"
 echo "ARCH_TYPE=${ARCH_TYPE}"
 
 install_package_manager
+install_packages fish
 
