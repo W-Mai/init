@@ -101,3 +101,5 @@ echo "ARCH_TYPE=${ARCH_TYPE}"
 install_package_manager
 install_packages fish
 
+
+fish ./init.fish
