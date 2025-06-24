@@ -102,6 +102,8 @@ add_profile
 detect_os_type
 detect_arch_type
 
+export OS_TYPE="${OS_TYPE}"
+export ARCH_TYPE="${ARCH_TYPE}"
 echo "OS_TYPE=${OS_TYPE}"
 echo "ARCH_TYPE=${ARCH_TYPE}"
 
