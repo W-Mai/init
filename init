@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
 set -e
 set -o pipefail
 
@@ -26,7 +24,7 @@ git clone --depth=1 "$REPO_URL" "$TEMP_DIR"
 
 pushd $TEMP_DIR
 echo "[INFO] Running init.sh"
-bash "$TEMP_DIR/init.sh"
+bash init.sh
 
 echo "[SUCCESS] init.sh completed."
 
