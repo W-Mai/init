@@ -17,7 +17,7 @@ end
 
 function setup_dotfiles
     echo -n "Enter your yadm git repo URL: "
-    read repo_url
+    read --prompt-str "Enter yadm repo URL: " repo_url < /dev/tty
 
     if test -z "$repo_url"
         echo "[WARN] No input provided, skipping yadm init."
