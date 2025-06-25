@@ -8,7 +8,7 @@ pushd ops
 
 
 # Common packages
-set common_packages pyenv curl
+set common_packages pyenv curl gnupg
 
 # Platform-specific packages
 set macos_packages orbstack yadm
