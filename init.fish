@@ -4,7 +4,7 @@ pushd ops
 
 . ./change_shell.fish
 . ./install_packages.fish
-
+. ./init_yadm.fish
 
 
 # Common packages
@@ -30,5 +30,10 @@ switch "$OS_TYPE"
         echo "[WARN] Package install not supported on OS_TYPE=$OS_TYPE"
         return 1
 end
+
+
+# Init modules
+setup_dotfiles
+
 
 popd
